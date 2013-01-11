@@ -5,34 +5,82 @@ Tornado: 591490672
 Revel: 455066445
 !-->
 
-</html>
-
-
-
-
 
 <html>
-  <head>
-    <title>YouTube</title>
-    <meta name="author" content="Adobe Systems">
-    <meta name="apple-itunes-app" content="app-id=455066445">
-    <!--<meta name="google-play-app" content="app-id=com.google.android.youtube">-->
+  <title>Adobe Tornado</title>
+  <meta name="author" content="Adobe Systems">
+  <meta name="apple-itunes-app" content="app-id=455066445">
+  <link rel="stylesheet" href="jquery.smartbanner.css" type="text/css" media="screen">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <link rel="stylesheet" href="jquery.smartbanner.css" type="text/css" media="screen">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  </head>
-  <body>
-<h1>You have been invited to a Tornado Event!</h1>
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+</head>
 
-<h3>
-<a href="tornado://x-callback-url/showEvent?eventID=a6cebec890624360a9530316c47372f6" target="itunes_store">Go to event</a>
-</h3>
+<body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+<!--
+file:///Users/tvoliter/github/pages/smart/email_template.html?eventID=a6cebec890624360a9530316c47372f6&hostName=ty&eventName=birthdaybath&recipientName=Sage
+-->
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-    <script src="jquery.smartbanner.js"></script>
-    <script type="text/javascript">
-      $().smartbanner();
-    </script>
-  </body>
-</html>
+function getURLParameter(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+}
+
+ $(document).ready(function() {
+   
+  var eventName = getURLParameter("eventName");
+  var eventID = getURLParameter("eventID");
+  var hostName = getURLParameter("hostName");
+  var recipientName = getURLParameter("recipientName");
+
+  var appURL = "tornado://x-callback-url/showEvent?eventID=" + eventID;
+
+  $("#recipientName").text(recipientName);
+  $("#eventName").text(eventName); 
+  $("#hostName").text(hostName); 
+  $("#getStartedLink").attr("href", appURL); 
+});
+
+
+
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="jquery.smartbanner.js"></script>
+<script type="text/javascript">
+  $().smartbanner();
+</script>
+
+
+
+<div style="background-image: url(header.png); height: 192px; width: 800px; border: 0px solid black;"> </div>
+
+<div style="background-color:#ebebeb; height: 350px; width: 610px; border: 0px solid black; margin-left:80px; padding-left:30px">
+
+Hi <span id="recipientName">Recipient</span>, <p>
+
+
+Get started using Tornado to share photos for the event "<span id="eventName">eventName</span>".<p>
+
+
+<B>Step 1 - get the free <a href="https://itunes.apple.com/us/app/adobe-revel/id455066445?mt=8&uo=4">Tornado app</a></B><br>
+<a href="https://itunes.apple.com/us/app/adobe-revel/id455066445?mt=8&uo=4" target="itunes_store"><img src="http://r.mzstatic.com/images/web/linkmaker/badge_appstore-lrg.gif" alt="Adobe Revel - Adobe" style="border: 0;"/></a><P><BR>
+
+<B>Step 2 - Join the Event</B><BR>
+Then you can add pictures and see photos from other friends.<P>
+
+After installing <a id="getStartedLink" href="tornado://x-callback-url/showEvent?
+   x-source=SourceApp"Get Started</a>Launch Tornado</a> on your iPhone to get started!
+
+</div>
+
+<div style="background-image: url(footer.png); height: 125px; width: 800px; border: 0px solid black;"> </div>
+
+
+<body>
+<html>
