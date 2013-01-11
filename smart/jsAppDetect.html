@@ -5,14 +5,14 @@
   <body>
 
     <h2><a id="applink1" href="tornado://x-callback-url/showEvent?eventID=a6cebec890624360a9530316c47372f6">open Tornado with fallback to Appstore</a></h2>
-    <h2><a id="applink2" href="unknown://nowhere">open unknown with fallback to appstore</a></h2>
-    <p><i>Only works on iPhone!</i></p>    
+
+ 
 
   <script type="text/javascript">
 
 
 // To avoid the "protocol not supported" alert, fail must open another app.
-var appstorefail = "https://itunes.apple.com/us/app/adobe-revel/id455066445?mt=8&uo=4";
+var appstorefail = "itms-apps://itunes.apple.com/us/app/adobe-revel/id455066445?mt=8&uo=4";
 
 function applink(fail){
     return function(){
@@ -28,7 +28,6 @@ function applink(fail){
 }
 
 document.getElementById("applink1").onclick = applink(appstorefail);
-document.getElementById("applink2").onclick = applink(appstorefail);
 
 </script>
 </body>
