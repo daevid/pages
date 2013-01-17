@@ -19,15 +19,6 @@ Revel: 455066445
 
 <script type="text/javascript">
 
-
-
-
-function getURLParameter(name) {
-    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
-}
-
- $(document).ready(function() {
-
   var eventName = getURLParameter("eventName");
   var eventID = getURLParameter("eventID");
   var hostName = getURLParameter("hostName");
@@ -38,6 +29,15 @@ function getURLParameter(name) {
 if (navigator.userAgent.match(/iPhone/i)) {
   $('head').append("<meta name='apple-itunes-app' content='app-id=455066445, app-argument=eventID=" + eventID + "'>");
 }
+
+
+function getURLParameter(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+}
+
+ $(document).ready(function() {
+
+
 
 
   $("#recipientName").text(recipientName);
